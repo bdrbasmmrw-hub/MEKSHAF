@@ -1,0 +1,10 @@
+CREATE DATABASE IF NOT EXISTS scam_detector CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+USE scam_detector;
+
+CREATE TABLE IF NOT EXISTS reports (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    scam_text TEXT NOT NULL,
+    verdict VARCHAR(255) NOT NULL,
+    percentage INT NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
